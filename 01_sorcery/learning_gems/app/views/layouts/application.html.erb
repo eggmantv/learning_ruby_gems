@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LearningGems</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+  </head>
+
+  <body>
+    <p><%= flash[:notice] %></p>
+    <% if logged_in? %>
+      你好，<%= current_user.email %> 
+      <%= link_to "退出", logout_path, method: :delete %>
+    <% else %>
+      <%= link_to "登陆", new_session_path %> 
+      <%= link_to "注册", new_user_path %>
+    <% end -%>
+    <%= yield %>
+
+    <%= javascript_include_tag 'application' %>
+  </body>
+</html>
