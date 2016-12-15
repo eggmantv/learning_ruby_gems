@@ -1,5 +1,7 @@
 #!/bin/bash
-
+#
+# Author: EGGMAN.TV
+#
 # Usage:
 # 
 # ./deploy.sh production|staging
