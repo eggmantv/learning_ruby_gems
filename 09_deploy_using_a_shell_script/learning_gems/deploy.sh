@@ -73,11 +73,6 @@ bundle exec rake assets:precompile RAILS_ENV=$ENV;
 echo start migrate...;
 bundle exec rake db:migrate RAILS_ENV=$ENV;
 
-echo -------------;
-chmod 777 public;
-chmod 777 tmp;
-chmod 777 -R log/;
-
 echo reload or start unicorn...;
 if [ -f tmp/pids/unicorn.pid ]; then
   echo reload unicorn...;
