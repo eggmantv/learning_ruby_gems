@@ -17,13 +17,11 @@ USER=deploy
 BUNDLE_GEMS_PATH=/path/to/bundle/gems
 if [[ $ENV == 'production' ]]; then
   HOST=www.hello.com
-  KEY=hello_prd.pem
   BRANCH=master
   WWW_ROOT=/var/nginx/html/hello
 elif [[ $ENV == 'staging' ]]; then
   HOST=dev.hello.com
-  KEY=hello_stg.pem
-  BRANCH=staging
+  BRANCH=dev
   WWW_ROOT=/var/nginx/html/hello
 else
   echo "Usage ./deploy.sh production|staging"
@@ -40,7 +38,7 @@ echo "bundle gems path: $BUNDLE_GEMS_PATH"
 echo "*********************"
 
 # -t: close ssh connection when finished
-ssh -t -i $KEY $USER@$HOST "\
+ssh -t $USER@$HOST "\
 echo logged in $HOST successfully;
 echo $ENV:
 echo -------------;
