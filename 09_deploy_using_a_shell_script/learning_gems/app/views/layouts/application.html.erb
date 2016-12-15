@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LearningGems</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= yield :stylesheets %>
+  </head>
+
+  <body>
+    <div class="container">
+      <p><%= flash[:notice] %></p>
+      <% if logged_in? %>
+        你好，<%= current_user.email %> 
+        <%= link_to "退出", logout_path, method: :delete %>
+      <% else %>
+        <%= link_to "登陆", new_session_path %> 
+        <%= link_to "注册", new_user_path %>
+      <% end -%>
+      <%= yield %>
+    </div>
+
+    <%= javascript_include_tag 'application' %>
+    <%= yield :javascripts %>
+  </body>
+</html>
