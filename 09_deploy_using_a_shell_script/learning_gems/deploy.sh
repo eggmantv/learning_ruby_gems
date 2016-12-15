@@ -69,9 +69,9 @@ git pull;
 echo bundle install...;
 bundle install --path $BUNDLE_GEMS_PATH --without development test --deployment;
 echo compiling assets...;
-bundle exec rake assets:precompile RAILS_ENV=$ENV;
+bundle exec rails assets:precompile RAILS_ENV=$ENV;
 echo start migrate...;
-bundle exec rake db:migrate RAILS_ENV=$ENV;
+bundle exec rails db:migrate RAILS_ENV=$ENV;
 
 echo reload or start unicorn...;
 if [ -f tmp/pids/unicorn.pid ]; then
