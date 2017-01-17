@@ -1,0 +1,15 @@
+GEM
+  remote: https://ruby.taobao.org/
+  specs:
+    eventmachine (1.2.0.1)
+    logger (1.2.8)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  eventmachine (>= 1.2.0)
+  logger
+
+BUNDLED WITH
+   1.13.6

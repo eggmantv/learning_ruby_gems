@@ -1,0 +1,16 @@
+#!/bin/bash
+
+pid=$(dirname "$0")/../reaper.pid
+
+if [ ! -f $pid ]; then
+  echo "Reaper was not running!";
+  exit 1
+fi
+
+if [ -z $pid ]; then
+  echo "Reaper was not running!";  
+else
+  kill `cat $pid`
+  echo "Reaper quit!"
+fi
+rm -f $pid

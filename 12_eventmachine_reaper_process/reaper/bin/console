@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+$: << File.expand_path('../../lib', __FILE__)
+
+require File.expand_path('../../main', __FILE__)
+
+require "irb"
+IRB.start

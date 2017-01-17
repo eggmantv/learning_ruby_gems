@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+#
+# Usage:
+#   start -h
+#
+
+pid = File.expand_path('../../reaper.pid', __FILE__)
+if File.exists?(pid)
+  print "Reaper is already running!(PID: #{File.read(pid).chomp})\n"
+else
+  $: << File.expand_path('../../lib', __FILE__)
+  
+  require 'reaper'
+  Reaper.main
+end

@@ -1,0 +1,5 @@
+development:
+  key: 123
+
+production:
+  key: 456

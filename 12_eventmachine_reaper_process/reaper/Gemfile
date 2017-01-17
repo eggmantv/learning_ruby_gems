@@ -1,0 +1,5 @@
+# source "https://rubygems.org"
+source "https://ruby.taobao.org"
+
+gem "eventmachine", '>= 1.2.0'
+gem 'logger'
