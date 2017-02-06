@@ -37,7 +37,7 @@ module Reaper
     def self.handle_signal
       [:INT, :QUIT, :TERM].each do |sig|
         trap(sig) do
-          # clear pif file
+          # clear pid file
           pid_file = File.expand_path('../../../reaper.pid', __FILE__)
           FileUtils.rm_f(pid_file) if File.exists?(pid_file)
           puts "#{sig} signal received, exit!"
