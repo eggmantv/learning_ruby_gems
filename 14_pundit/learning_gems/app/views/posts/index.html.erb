@@ -1,0 +1,14 @@
+<h1>Posts</h1>
+
+<ul class="list-group">
+  <% @posts.each do |post| %>
+    <li class="list-group-item">
+      <%= link_to post.title, post_path(post) %>,
+      ID: <%= post.id %>,
+      作者: <%= post.user.email %>
+      <% if policy(post).edit? %>
+        <%= link_to "编辑", edit_post_path(post), class: "btn btn-primary" %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
